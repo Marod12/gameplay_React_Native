@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextBase, Image, View, TouchableOpacity, TouchableOpacityProps } from 'react-native';
+import { Text, Image, View, TouchableOpacity, TouchableOpacityProps } from 'react-native';
 
 import DiscordImg from '../../assets/discord.png';
 import { styles } from './styles';
@@ -18,9 +18,9 @@ export function ButtonIcon({ title, ...rest } : Props) {
                 <Image source={DiscordImg} style={styles.icon} />
             </View>
 
-            <TextBase style={styles.title}>
+            <Text style={styles.title}>
                 { title }
-            </TextBase>
+            </Text>
         </TouchableOpacity>
     )
 }
