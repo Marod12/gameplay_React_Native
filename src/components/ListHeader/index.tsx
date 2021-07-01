@@ -11,17 +11,13 @@ type Props = {
 export function ListHeader({ title, subtitle }: Props) {
     return (
        <View style={styles.container}>
-           
-           <View>
-               <Text style={styles.title}>
-                   { title }
-               </Text>
+            <Text style={styles.title}>
+                { title }
+            </Text>
 
-               <Text style={styles.subtitle}>
-                   { subtitle }
-               </Text>
-           </View>
-
+            <Text style={styles.subtitle}>
+                { subtitle }
+            </Text>
        </View> 
     )
 }
