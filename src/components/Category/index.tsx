@@ -24,7 +24,7 @@ export function Category({
     const { secondary40, secondary50, secondary70, secondary85 } = theme.colors;
 
     return (
-        <RectButton  {...rest}style={styles.container}>
+        <RectButton  {...rest}>
             <LinearGradient
                 style={styles.container}
                 colors={[ secondary50, secondary70 ]}
