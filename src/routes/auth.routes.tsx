@@ -5,6 +5,7 @@ import { Home } from '../screens/Home';
 import { Signin } from '../screens/Signin';
 
 const { Navigator, Screen } = createStackNavigator();
+import { theme } from '../global/theme';
 
 export function AuthRoutes() {
     return (
@@ -12,7 +13,7 @@ export function AuthRoutes() {
             headerMode="none"
             screenOptions={{ 
                 cardStyle: {
-                    backgroundColor: "transparent"
+                    backgroundColor: theme.colors.secondary100
                 }
             }}
         >
