@@ -1,15 +1,24 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
+import { useAuth } from '../../hooks/auth';
+
 import { Avatar } from '../Avatar';
 import { styles } from './styles';
 
 export function Profile() {
+    const { user } = useAuth();
+    console.log(user)
+
     return (
        <View style={styles.container}>
 
-           <Avatar urlImage="https://github.com/Marod12.png"/>
-           
+            <Avatar 
+                urlImage={ user.avatar === null 
+                ? 'https://gamerssuffice.com/wp-content/uploads/2019/11/How-to-add-bots-to-discord-500x405.jpg' 
+                : user.avatar } 
+            />
+            
            <View>
                <View style={styles.user}>
                    <Text style={styles.greeting}>
@@ -17,7 +26,7 @@ export function Profile() {
                    </Text>
 
                    <Text style={styles.username}>
-                       Marod
+                       { user.firstName }
                    </Text>
                </View>
 
