@@ -52,44 +52,39 @@ export function Home() {
 
     return (
         <Background>
-            <View style={styles.container}>
-                
-                <View style={styles.header}>
-                    <Profile />
-                    <ButtonAdd onPress={handleAppointmentCreate} />
-                </View>
-
-                <View>
-                    <CategorySelect 
-                        categorySelected={category}
-                        setCategory={handleCategorySelect}
-                    />
-                </View>
-
-                {
-                    loading ? <Load /> :
-                    <>
-                        <ListHeader 
-                            title="Partidas agendadas"
-                            subtitle={`Total ${appointments.length}`}
-                        />
-                        <FlatList 
-                            data={appointments}
-                            keyExtractor={item => item.id}
-                            renderItem={({ item }) => (
-                                <Appointment 
-                                    data={item}
-                                    onPress={() => handleAppointmentDetails(item)}
-                                />
-                            )}
-                            ItemSeparatorComponent={() => <ListDivider />}
-                            contentContainerStyle={{ paddingBottom: 69 }}
-                            style={styles.matches}
-                            showsVerticalScrollIndicator={false}
-                        />
-                    </>
-                }        
+            <View style={styles.header}>
+                <Profile />
+                <ButtonAdd onPress={handleAppointmentCreate} />
             </View>
+
+            <CategorySelect 
+                categorySelected={category}
+                setCategory={handleCategorySelect}
+            />
+
+            {
+                loading ? <Load /> :
+                <>
+                    <ListHeader 
+                        title="Partidas agendadas"
+                        subtitle={`Total ${appointments.length}`}
+                    />
+                    <FlatList 
+                        data={appointments}
+                        keyExtractor={item => item.id}
+                        renderItem={({ item }) => (
+                            <Appointment 
+                                data={item}
+                                onPress={() => handleAppointmentDetails(item)}
+                            />
+                        )}
+                        ItemSeparatorComponent={() => <ListDivider />}
+                        contentContainerStyle={{ paddingBottom: 69 }}
+                        style={styles.matches}
+                        showsVerticalScrollIndicator={false}
+                    />
+                </>
+            }
         </Background>
-    )
+    );
 }

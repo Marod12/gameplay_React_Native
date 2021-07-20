@@ -6,6 +6,8 @@ import DiscordSvg from '../../assets/discord.svg';
 
 const { CDN_IMAGE } = process.env;
 
+//console.log(CDN_IMAGE);
+
 type Props = {
     guildId: string;
     iconId: string | null;

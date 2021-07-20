@@ -8,6 +8,8 @@ const { CDN_IMAGE } = process.env;
 const { REDIRECT_URI } = process.env;
 const { RESPONSE_TYPE } = process.env;
 
+//console.log(SCOPE, CLIENT_ID, CDN_IMAGE, REDIRECT_URI, RESPONSE_TYPE)
+
 import { api } from '../services/api';
 import { COLLECTION_USERS } from '../configs/database';
 
@@ -49,7 +51,7 @@ function AuthProvider({ children }: AuthProviderProps) {
         setLoading(true);
 
         const authUrl = `${api.defaults.baseURL}/oauth2/authorize?client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URI}&response_type=${RESPONSE_TYPE}&scope=${SCOPE}`; 
-
+        console.log(authUrl)
         const { type, params } = await AuthSession
         .startAsync({ authUrl }) as AuthorizationResponse;
 
